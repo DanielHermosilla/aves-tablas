@@ -17,6 +17,10 @@ dependencies = [
     "seaborn",
     "pandas",
     "adjustText",
+    "scattertext",
+    "pymunk",
+    "cytoolz",
+    "spectra"
     # otros que uses
 ]
 

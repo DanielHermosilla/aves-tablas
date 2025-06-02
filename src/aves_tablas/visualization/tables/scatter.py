@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from aves.visualization.collections.labels import LabelCollection
+from aves_tablas.visualization.collections.labels import LabelCollection
 
 
 def scatterplot(
@@ -23,7 +23,7 @@ def scatterplot(
     """
     Genera un scatter plot a partir de los datos entregados.
     Este gráfico visualiza los valores de dos variables para un set de datos como puntos en un plano bidimensional.
-    
+
 
     Parameters
     ----------
@@ -37,7 +37,7 @@ def scatterplot(
         El nombre de la columna que contiene los valores del eje y.
     hue: str, default=None
         El nombre de la columna que contiene los valores para agrupar los puntos.
-        Si se proporciona, los puntos del gráfico se colorearán según los grupos. 
+        Si se proporciona, los puntos del gráfico se colorearán según los grupos.
         La columna puede contener datos numéricos o categóricos.
     annotate: bool, default=False
         Indica si se deben agregar etiquetas a los puntos del gráfico.
@@ -62,7 +62,7 @@ def scatterplot(
     Returns
     -------------
     None
-"""
+    """
     if not drop_na:
         df = df.fillna(na_value)
     else:
@@ -89,5 +89,5 @@ def scatterplot(
             ax,
             avoid_collisions=avoid_collisions,
             adjustment_args=label_collision_args,
-            **label_args
+            **label_args,
         )

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from aves.features.utils import normalize_rows
+from aves_tablas.features.utils import normalize_rows
 
 
 def barchart(
@@ -22,7 +22,7 @@ def barchart(
     legend=True,
     legend_args=None,
     return_df=False,
-    **kwargs
+    **kwargs,
 ):
     """
     Crea un gráfico de barras a partir de los datos del dataframe. Un gráfico de barras muestra comparaciones entre categorías
@@ -100,7 +100,7 @@ def barchart(
         width=bar_width,
         edgecolor="none",
         legend=legend,
-        **kwargs
+        **kwargs,
     )
 
     if annotate:

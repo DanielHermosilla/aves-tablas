@@ -1,5 +1,5 @@
 import numpy as np
-from aves.visualization.collections import LabelCollection
+from aves_tablas.visualization.collections import LabelCollection
 import seaborn as sns
 
 
