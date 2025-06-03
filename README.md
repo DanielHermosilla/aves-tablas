@@ -18,7 +18,7 @@ Se utilizará el dataset de [flores iris](https://es.wikipedia.org/wiki/Conjunto
 
 ### Visualización de tablas
 
-```{python}
+```python
 from sklearn.datasets import load_iris
 from aves_tablas.features.utils import (
     standardize_columns,
@@ -59,4 +59,4 @@ plt.show()
 ```
 
 
-![Scatterplot de ejemplo](scatterplotejemplo.png)
+![Scatterplot de ejemplo](docs/scatterplotejemplo.png)
