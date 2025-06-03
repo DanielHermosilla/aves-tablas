@@ -55,3 +55,28 @@ plt.show()
 
 
 ![Scatterplot de ejemplo](docs/scatterplotejemplo.png)
+
+
+```python
+from aves_tablas.visualization.bars import barchart
+
+promedio_agrupado = (
+    df_standardized.groupby("species")[["largo del sépalo (cm)"]].mean().round(2)
+)
+
+fig, ax = plt.subplots(figsize=(6, 4))
+barchart(
+    ax=ax,
+    df=promedio_agrupado,
+    categories="largo del sépalo (cm)",
+    horizontal=True,
+    annotate=True,
+    bar_width=0.6,
+)
+plt.title("Promedio estandarizado de largo del sépalo por especie")
+plt.tight_layout()
+plt.show()
+```
+
+![Barchart de ejemplo](docs/barchartejemplo.png)
+
