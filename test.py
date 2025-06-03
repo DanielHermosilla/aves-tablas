@@ -1,35 +1,34 @@
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
-from aves_tablas.visualization.tables.bars import barchart
+from aves_tablas.visualization.boxplot import boxplot
 
-# Crear un DataFrame de prueba
+# Crear un DataFrame de ejemplo
+np.random.seed(42)
 df = pd.DataFrame(
     {
-        "Categoría A": [10, 15, 7, 5],
-        "Categoría B": [20, 10, 14, 6],
-        "Categoría C": [5, 8, 12, 9],
-    },
-    index=["Item 1", "Item 2", "Item 3", "Item 4"],
+        "grupo": np.random.choice(["A", "B", "C"], size=300),
+        "valor": np.random.normal(loc=100, scale=20, size=300),
+        "peso": np.random.uniform(0.5, 2.0, size=300),
+    }
 )
 
-# Crear figura
+# Crear la figura
 fig, ax = plt.subplots(figsize=(8, 5))
 
-# Llamar a tu función
-barchart(
+# Llamar a la función boxplot
+boxplot(
     ax=ax,
     df=df,
-    stacked=True,
-    normalize=True,
-    annotate=True,
-    annotate_args={"fontsize": 8, "fmt": ".2f"},
-    legend=True,
-    legend_args={"bbox_to_anchor": (1.05, 1), "loc": "upper left"},
-    bar_width=0.85,
+    group_column="grupo",
+    value_column="valor",
+    weight_column="peso",
+    vert=True,
+    showfliers=True,
+    boxplot_kwargs={"boxprops": {"facecolor": "lightblue"}},
 )
 
+# Mostrar el gráfico
 plt.tight_layout()
-plt.savefig("hello_barchart.png")
-print("Barchart generado: hello_barchart.png")
+plt.show()
