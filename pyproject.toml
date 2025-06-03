@@ -5,9 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "aves-tablas"
 version = "0.1.0"
-description = "Funciones de visualización de tablas y gráficos personalizados"
+description = "Funciones de visualización de tablas"
 authors = [
-    { name = "Tu Nombre", email = "tu@email.com" }
+    { name = "Daniel Hermosilla", email = "daniel.hermosilla.r@ug.uchile.cl" },
+	{ name = "Eduardo Graells-Garrido", email = "egraells@dcc.uchile.cl"}
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
